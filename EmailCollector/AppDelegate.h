@@ -12,6 +12,9 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
+-(NSArray*)getLocalArray;
+-(void)saveAsFile:(NSArray*)array;
+-(NSString *)dataFilePath;
 
 @end
 

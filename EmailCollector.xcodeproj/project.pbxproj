@@ -17,6 +17,8 @@
 		06BA3D3A1B7B93B900404E68 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06BA3D391B7B93B900404E68 /* MessageUI.framework */; };
 		06BA3D3F1B7B9AA600404E68 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06BA3D3D1B7B9AA600404E68 /* Fabric.framework */; };
 		06BA3D401B7B9AA600404E68 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06BA3D3E1B7B9AA600404E68 /* Crashlytics.framework */; };
+		06BA3D441B7BA59D00404E68 /* SelectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06BA3D431B7BA59D00404E68 /* SelectorViewController.m */; };
+		06BA3D471B7BB1AC00404E68 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 06BA3D461B7BB1AC00404E68 /* TableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,10 @@
 		06BA3D391B7B93B900404E68 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		06BA3D3D1B7B9AA600404E68 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		06BA3D3E1B7B9AA600404E68 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		06BA3D421B7BA59D00404E68 /* SelectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectorViewController.h; sourceTree = "<group>"; };
+		06BA3D431B7BA59D00404E68 /* SelectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectorViewController.m; sourceTree = "<group>"; };
+		06BA3D451B7BB1AC00404E68 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
+		06BA3D461B7BB1AC00404E68 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,8 +99,9 @@
 			children = (
 				06BA3D171B7B8FFA00404E68 /* AppDelegate.h */,
 				06BA3D181B7B8FFA00404E68 /* AppDelegate.m */,
-				06BA3D1A1B7B8FFA00404E68 /* ViewController.h */,
-				06BA3D1B1B7B8FFA00404E68 /* ViewController.m */,
+				06BA3D481B7BB1B100404E68 /* New Group */,
+				06BA3D421B7BA59D00404E68 /* SelectorViewController.h */,
+				06BA3D431B7BA59D00404E68 /* SelectorViewController.m */,
 				06BA3D1D1B7B8FFA00404E68 /* Main.storyboard */,
 				06BA3D201B7B8FFA00404E68 /* Images.xcassets */,
 				06BA3D221B7B8FFA00404E68 /* LaunchScreen.xib */,
@@ -139,6 +146,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		06BA3D481B7BB1B100404E68 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				06BA3D451B7BB1AC00404E68 /* TableViewCell.h */,
+				06BA3D461B7BB1AC00404E68 /* TableViewCell.m */,
+				06BA3D1A1B7B8FFA00404E68 /* ViewController.h */,
+				06BA3D1B1B7B8FFA00404E68 /* ViewController.m */,
+			);
+			name = "New Group";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -150,6 +168,7 @@
 				06BA3D0D1B7B8FFA00404E68 /* Frameworks */,
 				06BA3D0E1B7B8FFA00404E68 /* Resources */,
 				06BA3D3C1B7B9A9800404E68 /* ShellScript */,
+				06BA3D411B7B9CC600404E68 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -250,6 +269,19 @@
 			shellPath = /bin/sh;
 			shellScript = "./Fabric.framework/run e07b801a326ab103c555995bdbaf758cb5af0792 7a1d49d8b5271fcc9df62cd990743da99b8402436cdcd72dc8b8e828b59e6242";
 		};
+		06BA3D411B7B9CC600404E68 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$INFOPLIST_FILE\"";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -260,6 +292,8 @@
 				06BA3D1C1B7B8FFA00404E68 /* ViewController.m in Sources */,
 				06BA3D191B7B8FFA00404E68 /* AppDelegate.m in Sources */,
 				06BA3D161B7B8FFA00404E68 /* main.m in Sources */,
+				06BA3D471B7BB1AC00404E68 /* TableViewCell.m in Sources */,
+				06BA3D441B7BA59D00404E68 /* SelectorViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
