@@ -49,6 +49,8 @@ class SelectorViewController: UIViewController, UIAlertViewDelegate {
         UIAlertView(title: "Warning", message: "This will make \(newOffset - currentOffset) API calls", delegate: self, cancelButtonTitle: "Cancel", otherButtonTitles: "Ok").show()
     }
     
+    //MARK: UIAlertView Delegate
+    
     func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
         if buttonIndex == 1 {
             let currentOffset: Int = Int(slider.minimumValue) / 100

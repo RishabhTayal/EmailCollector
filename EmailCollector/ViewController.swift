@@ -85,6 +85,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.addNavigationItems()
     }
     
+    //MARK: UITableView Datasource
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.list.count
     }
@@ -97,6 +99,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.numberLabel.text = "\(indexPath.row + 1)"
         return cell
     }
+ 
+    //MARK: MFMailComposeViewController Delegate
     
     func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
         self.dismissViewControllerAnimated(true, completion: nil)
