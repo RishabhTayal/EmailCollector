@@ -40,7 +40,7 @@
                                 <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Enter domain (company.com)" id="sNi-5L-2zt">
                                     <rect key="frame" x="0.0" y="64" width="600" height="44"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL" returnKeyType="go" enablesReturnKeyAutomatically="YES"/>
                                     <connections>
                                         <outlet property="delegate" destination="vXZ-lx-hvc" id="B5Q-Am-K19"/>
                                     </connections>
@@ -109,6 +109,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="searchBar" destination="sNi-5L-2zt" id="Af0-Ru-0e6"/>
                         <outlet property="tableView" destination="b5z-6W-OsU" id="m0z-9U-lun"/>
                     </connections>
                 </viewController>

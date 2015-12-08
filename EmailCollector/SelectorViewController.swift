@@ -61,15 +61,13 @@ class SelectorViewController: UIViewController, UIAlertViewDelegate {
                     for email in emails {
                         list.append(email.value!)
                     }
-                    dispatch_async(dispatch_get_main_queue(), {() -> Void in
-                        if i == newOffset {
-                            appDelegate.saveAsFile(list)
-                            self.navigationController!.popViewControllerAnimated(true)
-                            if (self.delegate != nil) {
-                                self.delegate.didSelect()
-                            }
+                    if i == newOffset {
+                        appDelegate.saveAsFile(list)
+                        self.navigationController!.popViewControllerAnimated(true)
+                        if (self.delegate != nil) {
+                            self.delegate.didSelect()
                         }
-                    })
+                    }
                 })
             }
         } else {

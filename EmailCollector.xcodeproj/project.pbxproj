@@ -11,6 +11,7 @@
 		06BA3D211B7B8FFA00404E68 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06BA3D201B7B8FFA00404E68 /* Images.xcassets */; };
 		06BA3D241B7B8FFA00404E68 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06BA3D221B7B8FFA00404E68 /* LaunchScreen.xib */; };
 		06BA3D3A1B7B93B900404E68 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06BA3D391B7B93B900404E68 /* MessageUI.framework */; };
+		385782872E470DC71830B269 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C301BD11E40725248CBFBCF3 /* Pods.framework */; };
 		691CFB1D1C175A380055FA3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691CFB1C1C175A380055FA3A /* AppDelegate.swift */; };
 		691CFB3D1C175C910055FA3A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691CFB3C1C175C910055FA3A /* ViewController.swift */; };
 		691CFB3F1C175F240055FA3A /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691CFB3E1C175F240055FA3A /* TableViewCell.swift */; };
@@ -19,7 +20,6 @@
 		691CFB451C1770B80055FA3A /* ServiceCaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691CFB441C1770B80055FA3A /* ServiceCaller.swift */; };
 		691CFB471C1772660055FA3A /* DomainData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691CFB461C1772660055FA3A /* DomainData.swift */; };
 		691CFB491C1776090055FA3A /* EmailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691CFB481C1776090055FA3A /* EmailData.swift */; };
-		990B7812C57EFB48EECCAF55 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BE936EB7D37556BD8A389A4 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,14 +33,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		06BA3D101B7B8FFA00404E68 /* EmailCollector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = EmailCollector.app; path = "/Users/rtayal/Desktop/Personal/EmailCollector/build/Debug-iphoneos/EmailCollector.app"; sourceTree = "<absolute>"; };
 		06BA3D141B7B8FFA00404E68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		06BA3D1E1B7B8FFA00404E68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		06BA3D201B7B8FFA00404E68 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		06BA3D231B7B8FFA00404E68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		06BA3D291B7B8FFA00404E68 /* EmailCollectorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = EmailCollectorTests.xctest; path = "/Users/rtayal/Desktop/Personal/EmailCollector/build/Debug-iphoneos/EmailCollectorTests.xctest"; sourceTree = "<absolute>"; };
 		06BA3D391B7B93B900404E68 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
-		5BE936EB7D37556BD8A389A4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		691CFB1B1C175A370055FA3A /* EmailCollector-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EmailCollector-Bridging-Header.h"; sourceTree = "<group>"; };
 		691CFB1C1C175A380055FA3A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		691CFB3C1C175C910055FA3A /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -50,8 +47,11 @@
 		691CFB441C1770B80055FA3A /* ServiceCaller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceCaller.swift; sourceTree = "<group>"; };
 		691CFB461C1772660055FA3A /* DomainData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DomainData.swift; sourceTree = "<group>"; };
 		691CFB481C1776090055FA3A /* EmailData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailData.swift; sourceTree = "<group>"; };
+		69E04E071C1784AC006C3624 /* EmailCollector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmailCollector.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		69E04E081C1784AC006C3624 /* EmailCollectorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmailCollectorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		710AEEB52A79C06547CA3B5D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		8291EC168FE3F367EC14324A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		C301BD11E40725248CBFBCF3 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +60,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				06BA3D3A1B7B93B900404E68 /* MessageUI.framework in Frameworks */,
-				990B7812C57EFB48EECCAF55 /* libPods.a in Frameworks */,
+				385782872E470DC71830B269 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +80,8 @@
 				06BA3D121B7B8FFA00404E68 /* EmailCollector */,
 				06BA3D3B1B7B966000404E68 /* Frameworks */,
 				ABFE2DA2F8CA81F6B7DC0814 /* Pods */,
+				69E04E071C1784AC006C3624 /* EmailCollector.app */,
+				69E04E081C1784AC006C3624 /* EmailCollectorTests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
@@ -112,7 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				06BA3D391B7B93B900404E68 /* MessageUI.framework */,
-				5BE936EB7D37556BD8A389A4 /* libPods.a */,
+				C301BD11E40725248CBFBCF3 /* Pods.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -175,7 +177,7 @@
 			);
 			name = EmailCollector;
 			productName = EmailCollector;
-			productReference = 06BA3D101B7B8FFA00404E68 /* EmailCollector.app */;
+			productReference = 69E04E071C1784AC006C3624 /* EmailCollector.app */;
 			productType = "com.apple.product-type.application";
 		};
 		06BA3D281B7B8FFA00404E68 /* EmailCollectorTests */ = {
@@ -193,7 +195,7 @@
 			);
 			name = EmailCollectorTests;
 			productName = EmailCollectorTests;
-			productReference = 06BA3D291B7B8FFA00404E68 /* EmailCollectorTests.xctest */;
+			productReference = 69E04E081C1784AC006C3624 /* EmailCollectorTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */

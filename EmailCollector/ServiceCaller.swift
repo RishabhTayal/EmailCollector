@@ -14,18 +14,22 @@ class ServiceCaller: NSObject {
     
     class func getEmails(withOffset offset: Int, completionBlock: CompletionBlock) {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), {() -> Void in
-            let data: NSData? = NSData(contentsOfURL: NSURL(string: "https://api.emailhunter.co/v1/search?domain=illinois.edu&offset=\(offset)&api_key=80af57421ced39fbe8de5ae7e2605565e598f484")!)!
-            if data != nil {
-                do {
-                    let result: AnyObject = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments)
-                    completionBlock(result: result, error: nil)
-                    ///asdfasdfsd
-                } catch {
+            let domain: String = NSUserDefaults.standardUserDefaults().stringForKey("domain")!
+            let data: NSData! = NSData(contentsOfURL: NSURL(string: "https://api.emailhunter.co/v1/search?domain=\(domain)&offset=\(offset)&api_key=80af57421ced39fbe8de5ae7e2605565e598f484")!)
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                if data != nil {
+                    do {
+                        let result: AnyObject = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments)
+                        completionBlock(result: result, error: nil)
+                        ///asdfasdfsd
+                    } catch {
+                        completionBlock(result: nil, error: nil)
+                    }
+                } else {
                     completionBlock(result: nil, error: nil)
                 }
-            }
+            })
         })
-        
     }
     
 }
