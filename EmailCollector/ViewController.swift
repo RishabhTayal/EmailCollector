@@ -23,8 +23,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             self.list = rows
             self.addNavigationItems()
             self.tableView.reloadData()
-        }
-        else {
+        } else {
             self.list = []
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), {() -> Void in
                 let data: NSData? = NSData(contentsOfURL: (NSURL(string: "https://api.emailhunter.co/v1/search?domain=illinois.edu&api_key=80af57421ced39fbe8de5ae7e2605565e598f484")!))!
@@ -53,14 +52,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func addNavigationItems() {
         self.title = "\(self.list.count)(Total: \(NSUserDefaults.standardUserDefaults().objectForKey("total"))"
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Action, target: self, action: "shareClicked:")
-        //    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Load More" style:UIBarButtonItemStylePlain target:self action:@selector(loadAllClicked:)];
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+
     func shareClicked(sender: AnyObject) {
         let delegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         delegate.saveAsFile(self.list)

@@ -31,11 +31,6 @@ class SelectorViewController: UIViewController, UIAlertViewDelegate {
         self.minLabel.text = "\(slider.minimumValue)"
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     @IBAction func sliderChanged(sender: AnyObject) {
         var value: Int = Int(self.slider.value)
         let stepSize: Int = 100
@@ -79,8 +74,7 @@ class SelectorViewController: UIViewController, UIAlertViewDelegate {
                     }
                 })
             }
-        }
-        else {
+        } else {
             self.navigationController!.popViewControllerAnimated(true)
         }
     }
