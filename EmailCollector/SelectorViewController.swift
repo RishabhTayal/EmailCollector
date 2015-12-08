@@ -24,8 +24,9 @@ class SelectorViewController: UIViewController, UIAlertViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        self.totalLabel.text = "\(NSUserDefaults.standardUserDefaults().stringForKey("total"))"
-        self.slider.maximumValue = Float(totalLabel.text!)!
+        let resultValue = NSUserDefaults.standardUserDefaults().objectForKey("total")
+        self.totalLabel.text = "\(resultValue!)"
+        self.slider.maximumValue = totalLabel.text!.floatValue
         self.slider.minimumValue = Float(appDelegate.getLocalArray()!.count)
         self.minLabel.text = "\(slider.minimumValue)"
     }
@@ -53,8 +54,8 @@ class SelectorViewController: UIViewController, UIAlertViewDelegate {
     
     func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
         if buttonIndex == 1 {
-            let currentOffset: Int = Int(slider.minimumValue) / 100
-            let newOffset: Int = Int(slider.value) / 100
+            let currentOffset: Int = Int(Int(slider.minimumValue) / 100)
+            let newOffset: Int = Int(Int(slider.value) / 100)
             let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
             var list: [AnyObject] = appDelegate.getLocalArray()!
             for var i = currentOffset; i <= newOffset; i++ {
@@ -62,7 +63,7 @@ class SelectorViewController: UIViewController, UIAlertViewDelegate {
                     if let data: NSData = NSData(contentsOfURL: NSURL(string: "https://api.emailhunter.co/v1/search?domain=illinois.edu&offset=\(i)&api_key=80af57421ced39fbe8de5ae7e2605565e598f484")!) {
                         do {
                             let result: AnyObject = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments)
-                            list = (result["emails"] as! NSDictionary)["value"] as! [AnyObject]
+                            list = (result["emails"] as! NSArray).valueForKey("value") as! [AnyObject]
                             dispatch_async(dispatch_get_main_queue(), {() -> Void in
                                 if i == newOffset {
                                     appDelegate.saveAsFile(list)

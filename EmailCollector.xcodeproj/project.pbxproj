@@ -17,6 +17,8 @@
 		691CFB3D1C175C910055FA3A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691CFB3C1C175C910055FA3A /* ViewController.swift */; };
 		691CFB3F1C175F240055FA3A /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691CFB3E1C175F240055FA3A /* TableViewCell.swift */; };
 		691CFB411C175F5F0055FA3A /* SelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691CFB401C175F5F0055FA3A /* SelectorViewController.swift */; };
+		691CFB431C176C5A0055FA3A /* AppHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691CFB421C176C5A0055FA3A /* AppHelper.swift */; };
+		691CFB451C1770B80055FA3A /* ServiceCaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691CFB441C1770B80055FA3A /* ServiceCaller.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		691CFB3C1C175C910055FA3A /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		691CFB3E1C175F240055FA3A /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		691CFB401C175F5F0055FA3A /* SelectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectorViewController.swift; sourceTree = "<group>"; };
+		691CFB421C176C5A0055FA3A /* AppHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppHelper.swift; sourceTree = "<group>"; };
+		691CFB441C1770B80055FA3A /* ServiceCaller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceCaller.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +95,9 @@
 				691CFB1C1C175A380055FA3A /* AppDelegate.swift */,
 				06BA3D481B7BB1B100404E68 /* Main View Controller */,
 				691CFB401C175F5F0055FA3A /* SelectorViewController.swift */,
+				691CFB441C1770B80055FA3A /* ServiceCaller.swift */,
 				06BA3D131B7B8FFA00404E68 /* Supporting Files */,
+				691CFB421C176C5A0055FA3A /* AppHelper.swift */,
 			);
 			path = EmailCollector;
 			sourceTree = "<group>";
@@ -259,7 +265,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				691CFB431C176C5A0055FA3A /* AppHelper.swift in Sources */,
 				691CFB3F1C175F240055FA3A /* TableViewCell.swift in Sources */,
+				691CFB451C1770B80055FA3A /* ServiceCaller.swift in Sources */,
 				691CFB3D1C175C910055FA3A /* ViewController.swift in Sources */,
 				691CFB1D1C175A380055FA3A /* AppDelegate.swift in Sources */,
 				691CFB411C175F5F0055FA3A /* SelectorViewController.swift in Sources */,

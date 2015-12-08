@@ -32,7 +32,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     do {
                         let result: AnyObject = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments)
                         self.list = (result["emails"] as! NSArray).valueForKey("value") as! [AnyObject]
-                        NSUserDefaults.standardUserDefaults().setObject(result["results"], forKey: "total")
+                        print(result)
+                        let resultValue = result["results"]
+                        NSUserDefaults.standardUserDefaults().setObject(resultValue, forKey: "total")
                         NSUserDefaults.standardUserDefaults().synchronize()
                         //                [self saveAsFileAction:nil];
                         delegate.saveAsFile(self.list)
@@ -49,7 +51,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func addNavigationItems() {
-        self.title = "\(self.list.count)(Total: \(NSUserDefaults.standardUserDefaults().stringForKey("total"))"
+        self.title = "\(self.list.count)(Total: \(NSUserDefaults.standardUserDefaults().objectForKey("total"))"
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Action, target: self, action: "shareClicked:")
         //    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Load More" style:UIBarButtonItemStylePlain target:self action:@selector(loadAllClicked:)];
     }
