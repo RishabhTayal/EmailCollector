@@ -36,17 +36,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         ServiceCaller.getEmails(withOffset: 0, completionBlock: { (result, error) -> Void in
             MBProgressHUD.hideHUDForView(self.view, animated: true)
-            let domainData = DomainData(dict: result as! NSDictionary)
-            let emails = domainData.emails
-            for email in emails {
-                self.list.append(email.value!)
+            if result != nil {
+                let domainData = DomainData(dict: result as! NSDictionary)
+                let emails = domainData.emails
+                for email in emails {
+                    self.list.append(email.value!)
+                }
+                NSUserDefaults.standardUserDefaults().setObject(domainData.results, forKey: "total")
+                NSUserDefaults.standardUserDefaults().synchronize()
+                let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                delegate.saveAsFile(self.list)
+                self.addNavigationItems()
+                self.tableView.reloadSections(NSIndexSet(index: 0), withRowAnimation: .Automatic)
             }
-            NSUserDefaults.standardUserDefaults().setObject(domainData.results, forKey: "total")
-            NSUserDefaults.standardUserDefaults().synchronize()
-            let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
-            delegate.saveAsFile(self.list)
-            self.addNavigationItems()
-            self.tableView.reloadSections(NSIndexSet(index: 0), withRowAnimation: .Automatic)
         })
     }
     
@@ -94,6 +96,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.emailLabel.text = emailObject as? String
         cell.numberLabel.text = "\(indexPath.row + 1)"
         return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
     //MARK: MFMailComposeViewController Delegate
