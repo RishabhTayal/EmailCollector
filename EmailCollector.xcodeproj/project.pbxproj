@@ -10,7 +10,6 @@
 		06BA3D1F1B7B8FFA00404E68 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06BA3D1D1B7B8FFA00404E68 /* Main.storyboard */; };
 		06BA3D211B7B8FFA00404E68 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06BA3D201B7B8FFA00404E68 /* Images.xcassets */; };
 		06BA3D241B7B8FFA00404E68 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06BA3D221B7B8FFA00404E68 /* LaunchScreen.xib */; };
-		06BA3D301B7B8FFA00404E68 /* EmailCollectorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 06BA3D2F1B7B8FFA00404E68 /* EmailCollectorTests.m */; };
 		06BA3D3A1B7B93B900404E68 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06BA3D391B7B93B900404E68 /* MessageUI.framework */; };
 		06BA3D3F1B7B9AA600404E68 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06BA3D3D1B7B9AA600404E68 /* Fabric.framework */; };
 		06BA3D401B7B9AA600404E68 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06BA3D3E1B7B9AA600404E68 /* Crashlytics.framework */; };
@@ -37,8 +36,6 @@
 		06BA3D201B7B8FFA00404E68 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		06BA3D231B7B8FFA00404E68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		06BA3D291B7B8FFA00404E68 /* EmailCollectorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmailCollectorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		06BA3D2E1B7B8FFA00404E68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		06BA3D2F1B7B8FFA00404E68 /* EmailCollectorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmailCollectorTests.m; sourceTree = "<group>"; };
 		06BA3D391B7B93B900404E68 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		06BA3D3D1B7B9AA600404E68 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		06BA3D3E1B7B9AA600404E68 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
@@ -74,7 +71,6 @@
 			isa = PBXGroup;
 			children = (
 				06BA3D121B7B8FFA00404E68 /* EmailCollector */,
-				06BA3D2C1B7B8FFA00404E68 /* EmailCollectorTests */,
 				06BA3D111B7B8FFA00404E68 /* Products */,
 				06BA3D3B1B7B966000404E68 /* Frameworks */,
 			);
@@ -108,23 +104,6 @@
 				06BA3D201B7B8FFA00404E68 /* Images.xcassets */,
 				06BA3D221B7B8FFA00404E68 /* LaunchScreen.xib */,
 				06BA3D141B7B8FFA00404E68 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		06BA3D2C1B7B8FFA00404E68 /* EmailCollectorTests */ = {
-			isa = PBXGroup;
-			children = (
-				06BA3D2F1B7B8FFA00404E68 /* EmailCollectorTests.m */,
-				06BA3D2D1B7B8FFA00404E68 /* Supporting Files */,
-			);
-			path = EmailCollectorTests;
-			sourceTree = "<group>";
-		};
-		06BA3D2D1B7B8FFA00404E68 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				06BA3D2E1B7B8FFA00404E68 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -291,7 +270,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				06BA3D301B7B8FFA00404E68 /* EmailCollectorTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
