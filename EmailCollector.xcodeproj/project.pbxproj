@@ -19,6 +19,8 @@
 		691CFB411C175F5F0055FA3A /* SelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691CFB401C175F5F0055FA3A /* SelectorViewController.swift */; };
 		691CFB431C176C5A0055FA3A /* AppHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691CFB421C176C5A0055FA3A /* AppHelper.swift */; };
 		691CFB451C1770B80055FA3A /* ServiceCaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691CFB441C1770B80055FA3A /* ServiceCaller.swift */; };
+		691CFB471C1772660055FA3A /* DomainData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691CFB461C1772660055FA3A /* DomainData.swift */; };
+		691CFB491C1776090055FA3A /* EmailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691CFB481C1776090055FA3A /* EmailData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,8 @@
 		691CFB401C175F5F0055FA3A /* SelectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectorViewController.swift; sourceTree = "<group>"; };
 		691CFB421C176C5A0055FA3A /* AppHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppHelper.swift; sourceTree = "<group>"; };
 		691CFB441C1770B80055FA3A /* ServiceCaller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceCaller.swift; sourceTree = "<group>"; };
+		691CFB461C1772660055FA3A /* DomainData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DomainData.swift; sourceTree = "<group>"; };
+		691CFB481C1776090055FA3A /* EmailData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +97,8 @@
 			isa = PBXGroup;
 			children = (
 				691CFB1C1C175A380055FA3A /* AppDelegate.swift */,
+				691CFB461C1772660055FA3A /* DomainData.swift */,
+				691CFB481C1776090055FA3A /* EmailData.swift */,
 				06BA3D481B7BB1B100404E68 /* Main View Controller */,
 				691CFB401C175F5F0055FA3A /* SelectorViewController.swift */,
 				691CFB441C1770B80055FA3A /* ServiceCaller.swift */,
@@ -267,7 +273,9 @@
 			files = (
 				691CFB431C176C5A0055FA3A /* AppHelper.swift in Sources */,
 				691CFB3F1C175F240055FA3A /* TableViewCell.swift in Sources */,
+				691CFB471C1772660055FA3A /* DomainData.swift in Sources */,
 				691CFB451C1770B80055FA3A /* ServiceCaller.swift in Sources */,
+				691CFB491C1776090055FA3A /* EmailData.swift in Sources */,
 				691CFB3D1C175C910055FA3A /* ViewController.swift in Sources */,
 				691CFB1D1C175A380055FA3A /* AppDelegate.swift in Sources */,
 				691CFB411C175F5F0055FA3A /* SelectorViewController.swift in Sources */,

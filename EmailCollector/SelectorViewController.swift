@@ -54,24 +54,22 @@ class SelectorViewController: UIViewController, UIAlertViewDelegate {
             let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
             var list: [AnyObject] = appDelegate.getLocalArray()!
             for var i = currentOffset; i <= newOffset; i++ {
-                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), {() -> Void in
-                    if let data: NSData = NSData(contentsOfURL: NSURL(string: "https://api.emailhunter.co/v1/search?domain=illinois.edu&offset=\(i)&api_key=80af57421ced39fbe8de5ae7e2605565e598f484")!) {
-                        do {
-                            let result: AnyObject = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments)
-                            list = (result["emails"] as! NSArray).valueForKey("value") as! [AnyObject]
-                            dispatch_async(dispatch_get_main_queue(), {() -> Void in
-                                if i == newOffset {
-                                    appDelegate.saveAsFile(list)
-                                    self.navigationController!.popViewControllerAnimated(true)
-                                    if (self.delegate != nil) {
-                                        self.delegate.didSelect()
-                                    }
-                                }
-                            })
-                        } catch {
-                            
-                        }
+                
+                ServiceCaller.getEmails(withOffset: i, completionBlock: { (result, error) -> Void in
+                    let domainData = DomainData(dict: result as! NSDictionary)
+                    let emails = domainData.emails
+                    for email in emails {
+                        list.append(email.value!)
                     }
+                    dispatch_async(dispatch_get_main_queue(), {() -> Void in
+                        if i == newOffset {
+                            appDelegate.saveAsFile(list)
+                            self.navigationController!.popViewControllerAnimated(true)
+                            if (self.delegate != nil) {
+                                self.delegate.didSelect()
+                            }
+                        }
+                    })
                 })
             }
         } else {

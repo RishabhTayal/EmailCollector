@@ -25,26 +25,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             self.tableView.reloadData()
         } else {
             self.list = []
-            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), {() -> Void in
-                let data: NSData? = NSData(contentsOfURL: (NSURL(string: "https://api.emailhunter.co/v1/search?domain=illinois.edu&api_key=80af57421ced39fbe8de5ae7e2605565e598f484")!))!
-                if data != nil {
-                    do {
-                        let result: AnyObject = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments)
-                        self.list = (result["emails"] as! NSArray).valueForKey("value") as! [AnyObject]
-                        print(result)
-                        let resultValue = result["results"]
-                        NSUserDefaults.standardUserDefaults().setObject(resultValue, forKey: "total")
-                        NSUserDefaults.standardUserDefaults().synchronize()
-                        //                [self saveAsFileAction:nil];
-                        delegate.saveAsFile(self.list)
-                        dispatch_async(dispatch_get_main_queue(), {() -> Void in
-                            self.addNavigationItems()
-                            self.tableView.reloadSections(NSIndexSet(index: 0), withRowAnimation: .Automatic)
-                        })
-                    } catch {
-                        
-                    }
+            //TODO: make api call
+            
+            ServiceCaller.getEmails(withOffset: 0, completionBlock: { (result, error) -> Void in
+                let domainData = DomainData(dict: result as! NSDictionary)
+                let emails = domainData.emails
+                for email in emails {
+                    self.list.append(email.value!)
                 }
+                NSUserDefaults.standardUserDefaults().setObject(domainData.results, forKey: "total")
+                NSUserDefaults.standardUserDefaults().synchronize()
+                delegate.saveAsFile(self.list)
+                dispatch_async(dispatch_get_main_queue(), {() -> Void in
+                    self.addNavigationItems()
+                    self.tableView.reloadSections(NSIndexSet(index: 0), withRowAnimation: .Automatic)
+                })
             })
         }
     }
@@ -53,7 +48,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.title = "\(self.list.count)(Total: \(NSUserDefaults.standardUserDefaults().objectForKey("total"))"
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Action, target: self, action: "shareClicked:")
     }
-
+    
     func shareClicked(sender: AnyObject) {
         let delegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         delegate.saveAsFile(self.list)
@@ -94,7 +89,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.numberLabel.text = "\(indexPath.row + 1)"
         return cell
     }
- 
+    
     //MARK: MFMailComposeViewController Delegate
     
     func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
