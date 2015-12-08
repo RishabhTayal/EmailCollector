@@ -8,6 +8,7 @@
 
 import UIKit
 import Fabric
+import Crashlytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
-        //        Fabric.with([Crashlytics])
+        Fabric.with([Crashlytics()])
         return true
     }
     
