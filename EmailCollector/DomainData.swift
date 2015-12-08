@@ -6,9 +6,9 @@
 //  Copyright © 2015 Rishabh Tayal. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-class DomainData: NSObject {
+class DomainData: AnyObject {
 
     var domain: String?
     var emails: [EmailData] = []

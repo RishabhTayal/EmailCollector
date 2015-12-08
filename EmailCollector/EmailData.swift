@@ -5,8 +5,9 @@
 //  Created by Tayal, Rishabh on 12/8/15.
 //  Copyright © 2015 Rishabh Tayal. All rights reserved.
 //
+import Foundation
 
-class EmailData: NSObject {
+class EmailData: AnyObject {
 
     var sources: [AnyObject]?
     var type: String?
