@@ -7,13 +7,16 @@
 //
 
 import XCTest
+//import UIKit
+//@testable import EmailCollector
 
 class EmailCollectorUITests: XCTestCase {
-        
+    
     override func setUp() {
         super.setUp()
         
         continueAfterFailure = false
+        
         
         let app = XCUIApplication()
         setupSnapshot(app)
