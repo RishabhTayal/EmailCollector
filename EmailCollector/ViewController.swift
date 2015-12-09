@@ -9,6 +9,7 @@
 import UIKit
 import MessageUI
 import MBProgressHUD
+import UITableView_NXEmptyView
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MFMailComposeViewControllerDelegate, UIAlertViewDelegate, SelectorDelegate, UISearchBarDelegate {
     
@@ -27,6 +28,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             self.tableView.reloadData()
         } else {
             self.list = []
+            let label = UILabel(frame: self.tableView.frame)
+            label.text = "Start searching for a company name."
+            label.textAlignment = .Center
+            label.textColor = UIColor.lightGrayColor()
+            self.tableView.nxEV_emptyView = label
+            self.tableView.nxEV_hideSeparatorLinesWhenShowingEmptyView = true
             //           makeAPICallForDomain()
         }
     }

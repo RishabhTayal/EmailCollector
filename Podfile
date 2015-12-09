@@ -5,3 +5,4 @@ use_frameworks!
 pod 'MBProgressHUD'
 pod 'Fabric'
 pod 'Crashlytics'
+pod 'UITableView-NXEmptyView'
