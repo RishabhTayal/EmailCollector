@@ -20,7 +20,19 @@
 		691CFB451C1770B80055FA3A /* ServiceCaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691CFB441C1770B80055FA3A /* ServiceCaller.swift */; };
 		691CFB471C1772660055FA3A /* DomainData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691CFB461C1772660055FA3A /* DomainData.swift */; };
 		691CFB491C1776090055FA3A /* EmailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691CFB481C1776090055FA3A /* EmailData.swift */; };
+		6946FA701C189B34005B4D6F /* EmailCollectorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6946FA6F1C189B34005B4D6F /* EmailCollectorUITests.swift */; };
+		6946FA781C189B5E005B4D6F /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6946FA771C189B5E005B4D6F /* SnapshotHelper.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6946FA721C189B34005B4D6F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 06BA3D081B7B8FFA00404E68 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 06BA3D0F1B7B8FFA00404E68;
+			remoteInfo = EmailCollector;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		06BA3D141B7B8FFA00404E68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -37,6 +49,10 @@
 		691CFB441C1770B80055FA3A /* ServiceCaller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceCaller.swift; sourceTree = "<group>"; };
 		691CFB461C1772660055FA3A /* DomainData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DomainData.swift; sourceTree = "<group>"; };
 		691CFB481C1776090055FA3A /* EmailData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailData.swift; sourceTree = "<group>"; };
+		6946FA6D1C189B34005B4D6F /* EmailCollectorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmailCollectorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6946FA6F1C189B34005B4D6F /* EmailCollectorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailCollectorUITests.swift; sourceTree = "<group>"; };
+		6946FA711C189B34005B4D6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6946FA771C189B5E005B4D6F /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 		69E04E071C1784AC006C3624 /* EmailCollector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmailCollector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		710AEEB52A79C06547CA3B5D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		8291EC168FE3F367EC14324A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -53,6 +69,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6946FA6A1C189B34005B4D6F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -60,9 +83,11 @@
 			isa = PBXGroup;
 			children = (
 				06BA3D121B7B8FFA00404E68 /* EmailCollector */,
+				6946FA6E1C189B34005B4D6F /* EmailCollectorUITests */,
 				06BA3D3B1B7B966000404E68 /* Frameworks */,
 				ABFE2DA2F8CA81F6B7DC0814 /* Pods */,
 				69E04E071C1784AC006C3624 /* EmailCollector.app */,
+				6946FA6D1C189B34005B4D6F /* EmailCollectorUITests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,6 +132,16 @@
 				691CFB3C1C175C910055FA3A /* ViewController.swift */,
 			);
 			name = "Main View Controller";
+			sourceTree = "<group>";
+		};
+		6946FA6E1C189B34005B4D6F /* EmailCollectorUITests */ = {
+			isa = PBXGroup;
+			children = (
+				6946FA771C189B5E005B4D6F /* SnapshotHelper.swift */,
+				6946FA6F1C189B34005B4D6F /* EmailCollectorUITests.swift */,
+				6946FA711C189B34005B4D6F /* Info.plist */,
+			);
+			path = EmailCollectorUITests;
 			sourceTree = "<group>";
 		};
 		698C81691C17804500BEDC30 /* Model */ = {
@@ -161,18 +196,41 @@
 			productReference = 69E04E071C1784AC006C3624 /* EmailCollector.app */;
 			productType = "com.apple.product-type.application";
 		};
+		6946FA6C1C189B34005B4D6F /* EmailCollectorUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6946FA761C189B34005B4D6F /* Build configuration list for PBXNativeTarget "EmailCollectorUITests" */;
+			buildPhases = (
+				6946FA691C189B34005B4D6F /* Sources */,
+				6946FA6A1C189B34005B4D6F /* Frameworks */,
+				6946FA6B1C189B34005B4D6F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6946FA731C189B34005B4D6F /* PBXTargetDependency */,
+			);
+			name = EmailCollectorUITests;
+			productName = EmailCollectorUITests;
+			productReference = 6946FA6D1C189B34005B4D6F /* EmailCollectorUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		06BA3D081B7B8FFA00404E68 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "Rishabh Tayal";
 				TargetAttributes = {
 					06BA3D0F1B7B8FFA00404E68 = {
 						CreatedOnToolsVersion = 6.4;
 						DevelopmentTeam = CEBY93VF85;
+					};
+					6946FA6C1C189B34005B4D6F = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = 06BA3D0F1B7B8FFA00404E68;
 					};
 				};
 			};
@@ -190,6 +248,7 @@
 			projectRoot = "";
 			targets = (
 				06BA3D0F1B7B8FFA00404E68 /* EmailCollector */,
+				6946FA6C1C189B34005B4D6F /* EmailCollectorUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -202,6 +261,13 @@
 				06BA3D1F1B7B8FFA00404E68 /* Main.storyboard in Resources */,
 				06BA3D241B7B8FFA00404E68 /* LaunchScreen.xib in Resources */,
 				06BA3D211B7B8FFA00404E68 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6946FA6B1C189B34005B4D6F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,7 +363,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6946FA691C189B34005B4D6F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6946FA701C189B34005B4D6F /* EmailCollectorUITests.swift in Sources */,
+				6946FA781C189B5E005B4D6F /* SnapshotHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6946FA731C189B34005B4D6F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 06BA3D0F1B7B8FFA00404E68 /* EmailCollector */;
+			targetProxy = 6946FA721C189B34005B4D6F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		06BA3D1D1B7B8FFA00404E68 /* Main.storyboard */ = {
@@ -443,6 +526,34 @@
 			};
 			name = Release;
 		};
+		6946FA741C189B34005B4D6F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = EmailCollectorUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rtayal.EmailCollectorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TEST_TARGET_NAME = EmailCollector;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		6946FA751C189B34005B4D6F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = EmailCollectorUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rtayal.EmailCollectorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = EmailCollector;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -463,6 +574,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		6946FA761C189B34005B4D6F /* Build configuration list for PBXNativeTarget "EmailCollectorUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6946FA741C189B34005B4D6F /* Debug */,
+				6946FA751C189B34005B4D6F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
