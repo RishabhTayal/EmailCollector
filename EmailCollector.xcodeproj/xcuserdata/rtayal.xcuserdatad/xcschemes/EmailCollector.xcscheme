@@ -38,6 +38,16 @@
                ReferencedContainer = "container:EmailCollector.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "6946FA6C1C189B34005B4D6F"
+               BuildableName = "EmailCollectorUITests.xctest"
+               BlueprintName = "EmailCollectorUITests"
+               ReferencedContainer = "container:EmailCollector.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

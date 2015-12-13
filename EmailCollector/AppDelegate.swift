@@ -32,14 +32,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func saveAsFile(array: [AnyObject]) {
-        if !NSFileManager.defaultManager().fileExistsAtPath(self.dataFilePath()) {
-            NSFileManager.defaultManager().createFileAtPath(self.dataFilePath(), contents: nil, attributes: nil)
-            NSLog("Route creato")
-        }
+        NSFileManager.defaultManager().createFileAtPath(self.dataFilePath(), contents: nil, attributes: nil)
         let writeString: NSMutableString = NSMutableString(capacity: 0)
         //don't worry about the capacity, it will expand as necessary
         for var i = 0; i < array.count; i++ {
-            writeString.appendString("\(array[i]), \n")
+            if i == array.count - 1 {
+                writeString.appendString(array[i] as! String)
+            } else {
+                writeString.appendString("\(array[i]), \n")
+            }
         }
         //Moved this stuff out of the loop so that you write the complete string once and only once.
         NSLog("writeString :%@", writeString)
