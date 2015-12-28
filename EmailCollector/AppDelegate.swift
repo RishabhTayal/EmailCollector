@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    func getLocalArray() -> [AnyObject]? {
+    func getLocalArray() -> [AnyObject] {
         do {
             let objects: AnyObject = try String(contentsOfFile: self.dataFilePath())
             let rows: [AnyObject] = objects.componentsSeparatedByString(", \n")
@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } catch {
             
         }
-        return nil
+        return []
     }
     
     func saveAsFile(array: [AnyObject]) {
@@ -54,6 +54,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func dataFilePath() -> String {
         var paths: [AnyObject] = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
         let documentsDirectory: String = paths[0] as! String
-        return documentsDirectory.stringByAppendingString("myfile.csv")
+//        return documentsDirectory.stringByAppendingString("myfile.csv")
+        return (documentsDirectory as NSString).stringByAppendingPathComponent("myfile.csv")
     }
 }

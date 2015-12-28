@@ -22,8 +22,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         let delegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         self.searchBar.text = NSUserDefaults.standardUserDefaults().stringForKey("domain")
-        if let rows = delegate.getLocalArray() {
-            self.list = rows
+        if delegate.getLocalArray().count > 0 {
+            self.list = delegate.getLocalArray()
             self.addNavigationItems()
             self.tableView.reloadData()
         } else {
@@ -65,15 +65,24 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func shareClicked(sender: AnyObject) {
-        let delegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        delegate.saveAsFile(self.list)
-        //    [self saveAsFileAction:nil];
-        let mail: MFMailComposeViewController = MFMailComposeViewController()
-        mail.setSubject("Emails collected")
-        mail.mailComposeDelegate = self
-        let csvData: NSData = NSData(contentsOfFile: delegate.dataFilePath())!
-        mail.addAttachmentData(csvData, mimeType: "text/csv", fileName: "Emails.csv")
-        self.presentViewController(mail, animated: true, completion: nil)
+        if MFMailComposeViewController.canSendMail() {
+            let delegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            delegate.saveAsFile(self.list)
+            //    [self saveAsFileAction:nil];
+            let mail: MFMailComposeViewController = MFMailComposeViewController()
+            mail.setSubject("Emails collected")
+            mail.mailComposeDelegate = self
+            var csvData: NSData! = nil
+            do {
+                let path = delegate.dataFilePath()
+                let str = try String(contentsOfFile: path) as NSString
+                csvData = str.dataUsingEncoding(NSUTF8StringEncoding)!
+            } catch {
+                
+            }
+            mail.addAttachmentData(csvData, mimeType: "text/csv", fileName: "Emails.csv")
+            self.presentViewController(mail, animated: true, completion: nil)
+        }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -85,7 +94,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func didSelect() {
         let delegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        self.list = delegate.getLocalArray()!
+        self.list = delegate.getLocalArray()
         self.tableView.reloadData()
         self.addNavigationItems()
     }

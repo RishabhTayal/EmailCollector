@@ -25,9 +25,13 @@ class SelectorViewController: UIViewController, UIAlertViewDelegate {
         super.viewDidLoad()
         let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let resultValue = NSUserDefaults.standardUserDefaults().objectForKey("total")
-        self.totalLabel.text = "\(resultValue!)"
+        if let resultValue = resultValue {
+            self.totalLabel.text = "\(resultValue)"
+        } else {
+            self.totalLabel.text = ""
+        }
         self.slider.maximumValue = totalLabel.text!.floatValue
-        self.slider.minimumValue = Float(appDelegate.getLocalArray()!.count)
+        self.slider.minimumValue = Float(appDelegate.getLocalArray().count)
         self.minLabel.text = "\(slider.minimumValue)"
     }
     
@@ -52,7 +56,7 @@ class SelectorViewController: UIViewController, UIAlertViewDelegate {
             let currentOffset: Int = Int(Int(slider.minimumValue) / 100)
             let newOffset: Int = Int(Int(slider.value) / 100)
             let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-            var list: [AnyObject] = appDelegate.getLocalArray()!
+            var list: [AnyObject] = appDelegate.getLocalArray()
             for var i = currentOffset; i <= newOffset; i++ {
                 
                 ServiceCaller.getEmails(withOffset: i, completionBlock: { (result, error) -> Void in
