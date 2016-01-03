@@ -74,7 +74,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             mail.mailComposeDelegate = self
             var csvData: NSData! = nil
             do {
-                let path = delegate.dataFilePath()
+                let path = delegate.dataFilePath() 
                 let str = try String(contentsOfFile: path) as NSString
                 csvData = str.dataUsingEncoding(NSUTF8StringEncoding)!
             } catch {
