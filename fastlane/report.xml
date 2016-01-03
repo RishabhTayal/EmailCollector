@@ -3,37 +3,37 @@
   <testsuite name="run">
     
       
-      <testcase name="0: Verifying required fastlane version" time="0.000266">
+      <testcase name="0: Verifying required fastlane version" time="0.000304">
         
       </testcase>
     
       
-      <testcase name="1: default_platform" time="0.000159">
+      <testcase name="1: default_platform" time="0.000129">
         
       </testcase>
     
       
-      <testcase name="2: cocoapods" time="15.733161">
+      <testcase name="2: cocoapods" time="4.74189">
         
       </testcase>
     
       
-      <testcase name="3: sigh" time="8.067565">
+      <testcase name="3: sigh" time="8.759283">
         
       </testcase>
     
       
-      <testcase name="4: gym" time="47.850605">
+      <testcase name="4: gym" time="28.69683">
         
       </testcase>
     
       
-      <testcase name="5: deliver" time="127.077106">
+      <testcase name="5: deliver" time="65.448408">
         
       </testcase>
     
       
-      <testcase name="6: slack" time="1.733016">
+      <testcase name="6: slack" time="0.539487">
         
       </testcase>
     
