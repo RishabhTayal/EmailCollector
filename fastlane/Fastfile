@@ -53,7 +53,7 @@ platform :ios do
     sigh
     gym(scheme: "EmailCollector") # Build your app - more options available
     #deliver(force: true)
-    deliver
+    #deliver
 #frameit
   end
 
